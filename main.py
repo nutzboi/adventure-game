@@ -26,13 +26,15 @@ situations = {
     {
         "cases": 1,
         "func": [""],
-        "desc": [["You're lost in the mountains. In front of you are two caves.",
+        "desc": [["You're lost in the mountains.",
+                  "In front of you are two caves.",
                   "There seems to be a fire lit inside the left cave.",
                   "The right cave is so dark you can't see anything.",
                   "Which cave will you enter?"]],
         "prompt": [["Left Cave.", "Left Cave." "Right Cave.", "Right Cave."]],
         "results": [["cave1", "cave1_walk" "cave2", "cave2_empty"]],
-        "availability": [["monster_alive", "monster_beaten", "cave_stick","inventory_stick"]]
+        "availability": [["monster_alive", "monster_beaten",
+                          "cave_stick","inventory_stick"]]
     },
     "cave1":
     {
@@ -134,7 +136,8 @@ situations = {
         "prompt": [["Go into the other cave.",
                    "Fight it with your fist.",
                    "Beat it with your stick.", "Give up."]],
-        "results": [["escape_cave2", "fight_monster", "beat_monster", "give_up"]],
+        "results": [["escape_cave2", "fight_monster",
+                     "beat_monster", "give_up"]],
         "availability": [["", "", "inventory_stick", ""]]
     },
     "fight_monster":
@@ -174,7 +177,7 @@ situations = {
         "cases": 1,
         "func": ["score+1"],
         "desc": [["You sit outside for a while to take your breath.",
-                 "You're proud of yourself and ready to get up agian. (°v^)",]],
+                 "You're proud of yourself and ready to get up agian.",]],
         "prompt": [["Continue."]],
         "results": [["initial"]],
         "availability": [[""]]
@@ -183,7 +186,8 @@ situations = {
     {
         "cases": 1,
         "func": ["show_score"],
-        "desc": [["You are hopeless.", "You let the monster eat you.", "Gᴀᴍᴇ Oᴠᴇʀ."]],
+        "desc": [["You are hopeless.", "You let the monster eat you.",
+                   "Gᴀᴍᴇ Oᴠᴇʀ."]],
         "prompt": [["Main menu."]],
         "results": ["menu"],
         "availability": [""]
@@ -272,7 +276,8 @@ def menu():
     '''
     global player_name
     print_pause("Hi, " + player_name +
-                "! Please choose one of the options below by typing its number:")
+                "! Please choose one of the options below"+
+                " by typing its number:")
     menu_choice = int(prompt("1. Start New Game\n2. Exit", ["1", "2"]))
     if menu_choice == 1:
         print_pause("Starting game...", 3)
