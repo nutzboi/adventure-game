@@ -261,7 +261,8 @@ def gameplay():
         situation_case = random.randrange(0,situations["situation"]["cases"])
         for i in situations[situation]["desc"][situation_case]:
             print_pause(i,1 if len(i) < 35 else 2)
-        choice = prompt(situations[situation]["prompt"][situation_case],situations[situation]["availability"][situation_case])
+        choice = prompt(situations[situation]["prompt"][situation_case],
+                        situations[situation]["availability"][situation_case])
         situation = situations["situation"]["results"][choice]
 
 
